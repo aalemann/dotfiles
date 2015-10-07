@@ -1,0 +1,81 @@
+# do not show start-up screen
+startup_message off
+
+# turn off slightly annoying whole-screen-flash-on-tab-complete "feature"
+vbell off
+
+# always show status line
+#caption always
+
+# set scrollback buffer size to 2^15 lines
+defscrollback 32768
+
+# allows scrolling 
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# shelltitle "$ |bash"
+
+# set backtick command
+## backtick 100
+## get the current session name, from: http://superuser.com/questions/212392/how-to-include-screens-session-name-in-hardstatus/212520#212520
+## will be used in status bar
+#backtick 100 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+backtick 100 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*" | tr -d [:digit:]'
+#backtick 100 30 30 sh -c 'screen -ls | grep -o "$PPID[^[:space:]]*" | awk BEGIN { FS="." } { print $NF}'
+
+# set the status bar
+#hardstatus alwayslastline "%{bw} %100` | %{rw}%H: $LOGNAME | %{bw}%-w%50>%{+b bW}%n* %t %{-}%+w%< %=%{rw}[%l] | %c %D "
+hardstatus alwayslastline "%{bw} %100` %{kw}| %{rw}%H: $LOGNAME %{kw}| %{bw}%-w%50>%{+b bW}%n* %t %{-}%+w%< %=%{rw}[%l] %{kw}| %{rw}%c %D "
+# %{bw} blue text on white background
+# %100` execute the backtick command 100
+# %{kw} black text on white background
+# %{rw} red text on white background
+# %H    hostname
+# %-Lw  list windows before current window (L [optional] = "include flags")
+# %>    mark current text position for next truncation
+# %{bW} blue text on bright white background
+# %n    window number of active window
+# %f    window flag of active window
+# %t    window title of active window
+# %{-}  restore previous color setting (undo last color change)
+# %+Lw  list windows after current window (L [optional] = "include flags")
+# %<    like %=, but just truncate, do not fill with spaces
+# %= flush right
+# %l load
+# %c time in 24h format
+# %D day
+
+# another option to get the session name (same source)
+#screen 
+#screen $SHELL -c 'screen -X caption always "$STY"'
+
+
+
+#####################################################
+### following lines are copied from /etc/screenrc ###
+#####################################################
+# Remove some stupid / dangerous key bindings
+bind ^k
+#bind L
+bind ^\
+# Make them better
+bind \\ quit
+bind K kill
+bind I login on
+bind O login off
+bind } history
+
+# The vt100 description does not mention "dl". *sigh*
+termcapinfo vt100 dl=5\E[M
+
+# set these terminals up to be 'optimal' instead of vt100
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+
+# Change the xterm initialization string from is2=\E[!p\E[?3;4l\E[4l\E>
+# (This fixes the "Aborted because of window size change" konsole symptoms found
+#  in bug #134198)
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# Enable non-blocking mode to better cope with flaky ssh connections.
+defnonblock 5
+#####################################################
