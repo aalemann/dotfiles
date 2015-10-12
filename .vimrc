@@ -2,16 +2,36 @@ syntax on           "enable syntax highlightning
 
 filetype plugin indent on   "smartindent for specific languages (like idl)
 
+" tab related
 set expandtab       "uses space characters instead of tabs
 set tabstop=4       "set tabsize to 4 characters
 set shiftwidth=4    "for automatic/smart indentation
-
 set autoindent      "copy indentation from previous line
 set smartindent     "automatically inserts a level of indentation in some cases
 
 set number          "activate line numbering
 
 set foldmethod=marker   "active fold-method via marker, default markers: {{{  }}}
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set statusbar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline=%F           "full path to file
+set statusline+=%m          "modified flag [+]
+set statusline+=%r          "read-only flag [RO]
+set statusline+=%h          "help flag [Help]
+set statusline+=%w          "preview window flag (?)
+set statusline+=\ %=        "right alignment ('\ ' is a separator)
+set statusline+=[%{&ff}]    "format of file (dos, unix)
+set statusline+=\ %y        "file type as recognized by vim
+set statusline+=\ [%05l,    "position of cursor: line
+set statusline+=%03v]       "position of cursor: column
+set statusline+=[%p%%]      "position of cursor: percentage of total file
+set statusline+=\ [%L]      "total number of lines in file
+
+set laststatus=2            "status line is 2nd last line in editor
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
