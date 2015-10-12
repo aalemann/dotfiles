@@ -22,15 +22,22 @@ set statusline+=%m          "modified flag [+]
 set statusline+=%r          "read-only flag [RO]
 set statusline+=%h          "help flag [Help]
 set statusline+=%w          "preview window flag (?)
-set statusline+=\ %=        "right alignment ('\ ' is a separator)
+set statusline+=\           "separator
+set statusline+=%=          "right alignment
 set statusline+=[%{&ff}]    "format of file (dos, unix)
-set statusline+=\ %y        "file type as recognized by vim
-set statusline+=\ [%05l,    "position of cursor: line
-set statusline+=%03v]       "position of cursor: column
-set statusline+=[%p%%]      "position of cursor: percentage of total file
-set statusline+=\ [%L]      "total number of lines in file
+set statusline+=\           "separator
+set statusline+=%y          "file type as recognized by vim
+set statusline+=\           "separator
+set statusline+=%3v,        "position of cursor: line (%05l would also work)
+set statusline+=%l/%L       "position of cursor: line/total number of lines
+set statusline+=\           "separator
+set statusline+=\           "separator
+set statusline+=%p%%        "position of cursor: percentage of total file
+set statusline+=\           "separator
 
 set laststatus=2            "status line is 2nd last line in editor
+
+hi StatusLine ctermbg=0 cterm=NONE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Uncomment the following to have Vim jump to the last position when
