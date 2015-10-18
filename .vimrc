@@ -14,6 +14,16 @@ set number          "activate line numbering
 set foldmethod=marker   "active fold-method via marker, default markers: {{{  }}}
 
 
+set incsearch       "searching already while typing 
+set hlsearch        "highlight matching strings
+
+"clear highlighing by hitting <enter>
+nnoremap <CR> :nohlsearch<CR><CR> 
+"note, when using <esc> for this, 2 lines are required:
+"nnoremap <esc> :noh<return><esc>
+"nnoremap <esc>^[ <esc>^[
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set statusbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
