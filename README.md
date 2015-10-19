@@ -60,29 +60,15 @@ Assumption: repo at github is set up already, new PC is set up
 3) run install script
    $ ./makemydotfiles.sh
 
-   could look like this:
+Assumption: repo at github is set up, repo has been cloned to local PC, changes to be uploaded
+-----------
+1) set-up local account if global account is a different one (e.g. for work)
+   $ git config user.email <email-address>
+   $ git config user.name "<github-username>"
+2) add file which has been changed
+   $ git add <file>
+3) commit locally, write a commit message
+   $ git commit -m 'Changed vim colorscheme!'
+4) push to GitHub
+   $ git push origin master
 
-    #!/bin/bash
-
-    # Variables
-    dir=~/dotfiles                  # dotfiles directory
-    olddir=~/dotfiles_old           # old dotfiles backup directory
-    files=".bashrc .vimrc"          # list of files/folders to symlink in homedir
-
-    # create dotfiles_old in homedir
-    echo "Creating $olddir for backup of any existing dotfiles in ~"
-    mkdir -p $olddir
-    echo "...done"
-
-    # change to the dotfiles directory
-    echo "Changing to the $dir directory"
-    cd $dir
-    echo "...done"
-
-    # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-    for file in $files; do
-        echo "Moving any existing dotfiles from ~ to $olddir"
-        mv ~/$file $olddir/
-        echo "Creating symlink to $file in home directory."
-        ln -s $dir/$file ~/$file
-    done
