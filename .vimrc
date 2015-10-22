@@ -54,8 +54,19 @@ set laststatus=2            "status line is 2nd last line in editor
 hi StatusLine ctermbg=0 cterm=NONE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tell vim to store swap-files all in one place
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" check if folder exists and eventually create it
+if !isdirectory( $HOME.'/.vim/swapfiles')
+    call mkdir ( $HOME.'/.vim/swapfiles', 'p' )
+    "silent !mkdir -p $HOME/.vim/test
+endif
 " set swap files to be in one place
 :set directory=$HOME/.vim/swapfiles//
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
