@@ -27,6 +27,7 @@ nnoremap <CR> :nohlsearch<CR><CR>
 "nnoremap <esc> :noh<return><esc>
 "nnoremap <esc>^[ <esc>^[
 
+set history=1000        "increase size of history (default is usually 50))
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set statusbar
