@@ -1,13 +1,21 @@
+" use vim-options and disable vi-behaviour; is not set, cool stuff won't work
+" if only system-wide .vimrc exists, this would not be set off by default
+" if explicitly loading a .vimrc with vim -u test_vimrc this is not off by default
+set nocompatible
+
 syntax on           "enable syntax highlightning
 
-filetype plugin indent on   "smartindent for specific languages (like idl)
 
-" tab related
-set expandtab       "uses space characters instead of tabs
-set tabstop=4       "set tabsize to 4 characters
-set shiftwidth=4    "for automatic/smart indentation
-set autoindent      "copy indentation from previous line
-set smartindent     "automatically inserts a level of indentation in some cases
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" handle tabs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype plugin indent on   "smartindent for specific languages (like idl)
+set expandtab               "uses space characters instead of tabs
+set tabstop=4               "set tabsize to 4 characters
+set shiftwidth=4            "for automatic/smart indentation
+set autoindent              "copy indentation from previous line
+set smartindent             "automatically inserts a level of indentation in some cases
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set number          "activate line numbering
 
