@@ -65,6 +65,9 @@ Assumption: repo at github is set up, repo has been cloned to local PC, changes 
 1) set-up local account if global account is a different one (e.g. for work)
    $ git config user.email <email-address>
    $ git config user.name "<github-username>"
+   note, global account is set as follows:
+   git config --global user.name "<user-name>"
+   git config --global user.email "<email-address>"
 2) add file which has been changed
    $ git add <file>
 3) commit locally, write a commit message
