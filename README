@@ -75,3 +75,7 @@ Assumption: repo at github is set up, repo has been cloned to local PC, changes 
 4) push to GitHub
    $ git push origin master
 
+Assumption: repo is set up and you want to check the status
+-----------
+1) check the status
+   $ git status
