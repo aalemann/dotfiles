@@ -126,11 +126,11 @@ ${color1}${voffset -24}     ${goto 60}${color2}${totaldown eth0}
 ${voffset -6}
 ${color1}up${goto 60}${color2}${upspeed eth0}${goto 130}${voffset -4}${upspeedgraph eth0 26}
 ${color1}${voffset -24}     ${goto 60}${color2}${totalup eth0}\
+${endif}${endif}\
 ##the following three have to be used if you want speedgraphs next to each other
 #${color2}${downspeedgraph eth0 26,100} ${alignr}${upspeedgraph eth0 26,100}
 #${voffset -6}${color1}down  ${color2}${downspeed eth0} ${alignr}${color2}${upspeed eth0}  ${color1}up
 #      ${color2}${totaldown eth0} ${alignr}${totalup eth0}   \
-${endif}${endif}\
 ###information about local and global IP-addresses
 ${voffset 2}
 ${color1}ext. IP ${color2}${alignr}${execi 600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
