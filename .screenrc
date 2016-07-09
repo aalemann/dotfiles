@@ -49,6 +49,9 @@ hardstatus alwayslastline "%{bw} %100` %{kw}| %{rw}%H: $LOGNAME %{kw}| %{bw}%-w%
 #screen 
 #screen $SHELL -c 'screen -X caption always "$STY"'
 
+# removing vim-window (and other full-screen (well, full-terminal) programs) after quitting them
+# and switching back to original screen ("alternate screen")
+altscreen on
 
 
 #####################################################
