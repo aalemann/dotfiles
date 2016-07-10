@@ -87,12 +87,17 @@ endif
 " set title of window to filename, vi is currently editing
 " takes into account tabs and buffers and 
 " avoids showing  thanks for flying Vim  when ending vi
+" note:  is an escape character, enter with: CTRL+V <Esc>
+"       t_ts --> window title start
+"       t_fs --> window title end
 if &term == "screen"
   set t_ts=k
   set t_fs=\
   auto BufEnter * :set title | let &titlestring = 'vi:' . expand('%')
-  auto VimLeave * :set t_ts=k\
+"  auto VimLeave * :set t_ts=k\
+  let &titleold=substitute(getcwd(), $HOME, "~", "")
 endif
+
 
 " related to screen-vim behaviour, but might be a bad idea to use
 " if match($TERM, "screen")!=-1
