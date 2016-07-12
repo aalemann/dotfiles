@@ -103,3 +103,10 @@ endif
 " if match($TERM, "screen")!=-1
 "    set term=xterm
 "endif
+
+" swapping
+" swap current character under the cursor with the next
+nnoremap <silent> gc xph
+" swap the current word under the cursor with the next
+" also works across new-lines
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
