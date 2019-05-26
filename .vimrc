@@ -3,7 +3,28 @@
 " if explicitly loading a .vimrc with vim -u test_vimrc this is not off by default
 set nocompatible
 
-syntax on           "enable syntax highlightning
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set Vundle environement
+" install Vundle via
+" $ git clone https://github.com/gmarik/Vundle.vim.git \
+"   ~/.vim/bundle/Vundle.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off                "required
+
+" set runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle (required)
+Plugin 'gmarik/Vundle.vim'
+
+" add plugins here (github-name/projectname)
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+syntax on                   "enable syntax highlightning
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -17,7 +38,7 @@ set autoindent              "copy indentation from previous line
 set smartindent             "automatically inserts a level of indentation in some cases
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set number          "activate line numbering
+set number                  "activate line numbering
 
 set foldmethod=marker   "active fold-method via marker, default markers: {{{  }}}
 
