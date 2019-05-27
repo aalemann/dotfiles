@@ -21,6 +21,9 @@ Plugin 'gmarik/Vundle.vim'
 " add plugins here (github-name/projectname)
 Plugin 'scrooloose/nerdtree'
 
+" allows to toggle bool and a few other words with shortcut, script_id=895
+Plugin 'Toggle'
+
 call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
