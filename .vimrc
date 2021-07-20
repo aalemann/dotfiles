@@ -84,7 +84,7 @@ set statusline+=\           "separator
 
 set laststatus=2            "status line is 2nd last line in editor
 
-hi StatusLine ctermbg=0 cterm=NONE
+hi StatusLine ctermbg=Grey cterm=NONE  "0 is black
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
